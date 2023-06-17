@@ -2,21 +2,67 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Mac Egirls">
+<Layout title="Mac E-girls">
 	<main>
-		<section
-			class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
-		>
-			<h1
-				class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-			>
-				Mac Egirls
-			</h1>
-			<p
-				class="tagline mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
-			>
-				An Open-Source Initiative.
-			</p>
+		<section class="hero py-20 rounded-2xl">
+			<div class="hero-content text-center">
+				<div class="max-w-md">
+					<h1
+						class="font-title text-[clamp(2rem,6vw,4.2rem)] font-black"
+					>
+						<span class="inline-grid">
+							<span
+								class="pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text opacity-70 blur-3xl [-webkit-text-fill-color:transparent] [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
+								aria-hidden="true"
+								>Mac E-girls
+							</span>
+							<span
+								class="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
+								>Mac E-girls
+							</span>
+						</span>
+					</h1>
+					<p class="tagline py-6 text-2xl">
+						An Open-Source Initiative.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="p-10">
+			<h2 class="text-4xl pb-4 font-semibold">Projects</h2>
+			<p>WIP</p>
+		</section>
+		<section class="p-10 flex flex-col gap-4">
+			<h2 class="text-4xl pb-2 font-semibold">FAQ</h2>
+			<div class="collapse collapse-arrow shadow-md">
+				<input type="radio" name="faq" />
+				<div class="collapse-title text-xl font-medium">
+					How can I help?
+				</div>
+				<div class="collapse-content">
+					<p>
+						Click into one of our projects! All of them have some
+						level of source code available on GitHub. We may
+						restrict contributions from anonymous or untrusted users
+						for some of our projects, but if you want to be vetted
+						and help out, feel free to email us at the link on our
+						GitHub!.
+					</p>
+				</div>
+			</div>
+			<div class="collapse collapse-arrow shadow-md">
+				<input type="radio" name="faq" />
+				<div class="collapse-title text-xl font-medium">
+					Why E-girls?
+				</div>
+				<div class="collapse-content">
+					<p>
+						It's an inside joke from the 2025 CS Discord Server! We
+						accept all contributors to the project, no matter your
+						gender or sexual orientation.
+					</p>
+				</div>
+			</div>
 		</section>
 	</main>
 </Layout>
