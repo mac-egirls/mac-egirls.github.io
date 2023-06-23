@@ -18,12 +18,15 @@ const props = Astro.props;
     <div class="flex-1">
         <div class="flex justify-between lg:pb-4">
             <h3>{props.title}</h3>
-            <a href={props.github} class="opacity-20 hover:opacity-50">
+            <a
+                href={props.github}
+                class="transition-opacity opacity-20 hover:opacity-50"
+            >
                 <img src="/github.svg" alt="Github Logo" />
             </a>
         </div>
         <div class="py-4 text-3xl">{props.tagline}</div>
-        <p class="text-neutral-300">
+        <p class="text-neutral-400">
             {props.description}
         </p>
     </div>
