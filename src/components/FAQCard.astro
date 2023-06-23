@@ -1,0 +1,15 @@
+---
+interface Props {
+    question: string;
+    answer: string;
+}
+
+export type { Props as FaqItemProps };
+
+const props = Astro.props;
+---
+
+<div class="py-2">
+    <h3 class="text-xl font-semibold">{props.question}</h3>
+    <p>{props.answer}</p>
+</div>
