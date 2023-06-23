@@ -1,46 +1,73 @@
 ---
+import Card, { type CardProps } from "../components/Card.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+
+const WikiCardProps: CardProps = {
+	title: "Wiki",
+	description:
+		"A community maintained wiki offering a wealth of course details, professor profiles, and comprehensive course material. Consume, contribute, or comment!",
+	tagline: "Discover. Learn. Share.",
+	github: "https://github.com/mac-egirls/mcmaster-cs-wiki",
+	link: "https://wiki.egirls.dev",
+	icon: "/globe.svg",
+};
+
+const OSCSCardProps: CardProps = {
+	title: "OSCS",
+	tagline: "Open Source Success.",
+	description:
+		"Leverage the collective knowledge and expertise shared within these cheatsheets, empowering your academic success while embracing the spirit of collaboration and open-source learning.",
+	github: "https://github.com/mac-egirls/oscs",
+	link: "https://egirls.dev/oscs/",
+	icon: "/oscs.svg",
+};
 ---
 
 <Layout title="Mac E-girls">
 	<main class="max-w-6xl px-8 m-auto">
 		<Hero />
-		<section class="p-10">
-			<h2 class="pb-4 text-4xl font-semibold">Projects</h2>
-			<p>WIP</p>
-		</section>
-		<section class="flex flex-col gap-4 p-10">
-			<h2 class="pb-2 text-4xl font-semibold">FAQ</h2>
-			<div class="shadow-md collapse collapse-arrow">
-				<input type="radio" name="faq" />
-				<div class="text-xl font-medium collapse-title">
-					How can I help?
-				</div>
-				<div class="collapse-content">
-					<p>
-						Click into one of our projects! All of them have some
-						level of source code available on GitHub. We may
-						restrict contributions from anonymous or untrusted users
-						for some of our projects, but if you want to be vetted
-						and help out, feel free to email us at the link on our
-						GitHub!.
-					</p>
-				</div>
+
+		<div id="projects">
+			<h2 class="pb-4 text-2xl font-semibold lg:pb-12">Initiatives</h2>
+			<div
+				class="flex flex-col items-center justify-center gap-8 md:flex-row"
+			>
+				<Card {...WikiCardProps} />
+				<Card {...OSCSCardProps} />
 			</div>
-			<div class="shadow-md collapse collapse-arrow">
-				<input type="radio" name="faq" />
-				<div class="text-xl font-medium collapse-title">
-					Why E-girls?
+			<section class="flex flex-col gap-4 p-10">
+				<h2 class="pb-2 text-4xl font-semibold">FAQ</h2>
+				<div class="shadow-md collapse collapse-arrow">
+					<input type="radio" name="faq" />
+					<div class="text-xl font-medium collapse-title">
+						How can I help?
+					</div>
+					<div class="collapse-content">
+						<p>
+							Click into one of our projects! All of them have
+							some level of source code available on GitHub. We
+							may restrict contributions from anonymous or
+							untrusted users for some of our projects, but if you
+							want to be vetted and help out, feel free to email
+							us at the link on our GitHub!.
+						</p>
+					</div>
 				</div>
-				<div class="collapse-content">
-					<p>
-						It's an inside joke from the 2025 CS Discord Server! We
-						accept all contributors to the project, no matter your
-						gender or sexual orientation.
-					</p>
+				<div class="shadow-md collapse collapse-arrow">
+					<input type="radio" name="faq" />
+					<div class="text-xl font-medium collapse-title">
+						Why E-girls?
+					</div>
+					<div class="collapse-content">
+						<p>
+							It's an inside joke from the 2025 CS Discord Server!
+							We accept all contributors to the project, no matter
+							your gender or sexual orientation.
+						</p>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	</main>
 </Layout>
