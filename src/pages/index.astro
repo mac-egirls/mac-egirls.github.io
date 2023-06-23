@@ -1,73 +1,70 @@
 ---
+import Card, { type CardProps } from "../components/Card.astro";
+import type { FaqItemProps } from "../components/FAQCard.astro";
+import FAQCard from "../components/FAQCard.astro";
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+
+const WikiCardProps: CardProps = {
+	title: "Wiki",
+	description:
+		"A community maintained wiki offering a wealth of course details, professor profiles, and comprehensive course material. Consume, contribute, or comment!",
+	tagline: "Discover. Learn. Share.",
+	github: "https://github.com/mac-egirls/mcmaster-cs-wiki",
+	link: "https://wiki.egirls.dev",
+	icon: "/globe.svg",
+};
+
+const OSCSCardProps: CardProps = {
+	title: "OSCS",
+	tagline: "Open Source Success.",
+	description:
+		"Leverage the collective knowledge and expertise shared within these cheatsheets, empowering your academic success while embracing the spirit of collaboration and open-source learning.",
+	github: "https://github.com/mac-egirls/oscs",
+	link: "https://egirls.dev/oscs/",
+	icon: "/oscs.svg",
+};
+
+const FAQ: FaqItemProps[] = [
+	{
+		question: "How can I help?",
+		answer: `Click into one of our projects! All of them have some level of source code available on GitHub. We may restrict contributions from anonymous or untrusted users for some of our projects, but if you want to be vetted and help out, feel free to email us at the link on our GitHub!.`,
+	},
+	{
+		question: "Why E-girls?",
+		answer: "It's an inside joke from the 2025 CS Discord Server! We accept all contributors to the project, no matter your gender or sexual orientation.",
+	},
+];
 ---
 
 <Layout title="Mac E-girls">
-	<main>
-		<!-- I'm lazy af make this better later -->
-		<section class="flex w-full justify-end pr-5 pt-5 ">
-			<button class="btn btn-primary btn-md md:btn-lg" ><a href="https://wiki.egirls.dev/">Go to wiki</a></button>
-		</section>
-		<section class="hero py-10 rounded-2xl">
-			<div class="hero-content text-center">
-				<div class="max-w-md">
-					<h1
-						class="font-title text-[clamp(2rem,6vw,4.2rem)] font-black"
-					>
-						<span class="inline-grid">
-							<span
-								class="pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text opacity-70 blur-3xl [-webkit-text-fill-color:transparent] [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
-								aria-hidden="true"
-								>Mac E-girls
-							</span>
-							<span
-								class="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
-								>Mac E-girls
-							</span>
-						</span>
-					</h1>
-					<p class="tagline text-2xl">
-						An open-source initative.
-					</p>
-				</div>
+	<main class="max-w-6xl px-8 m-auto">
+		<Hero />
+
+		<section id="projects" class="pb-4">
+			<h2 class="pb-4 text-2xl font-semibold lg:pb-12">Initiatives</h2>
+			<div
+				class="flex flex-col items-center justify-center gap-8 md:flex-row"
+			>
+				<Card {...WikiCardProps} />
+				<Card {...OSCSCardProps} />
 			</div>
 		</section>
-		
-		<section class="p-10">
-			<h2 class="text-4xl pb-4 font-semibold">Projects</h2>
-			<p>WIP</p>
-		</section>
-		<section class="p-10 flex flex-col gap-4">
-			<h2 class="text-4xl pb-2 font-semibold">FAQ</h2>
-			<div class="collapse collapse-arrow shadow-md">
-				<input type="radio" name="faq" />
-				<div class="collapse-title text-xl font-medium">
-					How can I help?
-				</div>
-				<div class="collapse-content">
-					<p>
-						Click into one of our projects! All of them have some
-						level of source code available on GitHub. We may
-						restrict contributions from anonymous or untrusted users
-						for some of our projects, but if you want to be vetted
-						and help out, feel free to email us at the link on our
-						GitHub!.
-					</p>
-				</div>
-			</div>
-			<div class="collapse collapse-arrow shadow-md">
-				<input type="radio" name="faq" />
-				<div class="collapse-title text-xl font-medium">
-					Why E-girls?
-				</div>
-				<div class="collapse-content">
-					<p>
-						It's an inside joke from the 2025 CS Discord Server! We
-						accept all contributors to the project, no matter your
-						gender or sexual orientation.
-					</p>
-				</div>
-			</div>
+
+		<section class="py-4">
+			<h2 class="pb-4 text-2xl font-semibold lg:pb-12">FAQ</h2>
+
+			{FAQ.map((faqprops) => <FAQCard {...faqprops} />)}
 		</section>
 	</main>
+	<footer class="max-w-6xl px-8 py-4 m-auto">
+		<hr class="border-neutral-700" />
+		<div class="flex justify-between py-4 text-sm text-neutral-700">
+			<div>Mac E-Girls</div>
+			<div>
+				This is an unofficial site and not affiliated with McMaster
+				University.
+			</div>
+		</div>
+	</footer>
 </Layout>
