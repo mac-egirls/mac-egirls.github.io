@@ -1,47 +1,20 @@
 ---
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Mac E-girls">
-	<main>
-		<!-- I'm lazy af make this better later -->
-		<section class="flex w-full justify-end pr-5 pt-5 ">
-			<button class="btn btn-primary btn-md md:btn-lg" ><a href="https://wiki.egirls.dev/">Go to wiki</a></button>
-		</section>
-		<section class="hero py-10 rounded-2xl">
-			<div class="hero-content text-center">
-				<div class="max-w-md">
-					<h1
-						class="font-title text-[clamp(2rem,6vw,4.2rem)] font-black"
-					>
-						<span class="inline-grid">
-							<span
-								class="pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text opacity-70 blur-3xl [-webkit-text-fill-color:transparent] [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
-								aria-hidden="true"
-								>Mac E-girls
-							</span>
-							<span
-								class="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,hsl(var(--s))_0%,hsl(var(--sf))_9%,hsl(var(--pf))_42%,hsl(var(--p))_47%,hsl(var(--a))_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,hsl(var(--s))_4%,color-mix(in_oklch,hsl(var(--sf)),hsl(var(--pf)))_22%,hsl(var(--p))_45%,color-mix(in_oklch,hsl(var(--p)),hsl(var(--a)))_67%,hsl(var(--a))_100.2%)]"
-								>Mac E-girls
-							</span>
-						</span>
-					</h1>
-					<p class="tagline text-2xl">
-						An open-source initative.
-					</p>
-				</div>
-			</div>
-		</section>
-		
+	<main class="max-w-6xl px-8 m-auto">
+		<Hero />
 		<section class="p-10">
-			<h2 class="text-4xl pb-4 font-semibold">Projects</h2>
+			<h2 class="pb-4 text-4xl font-semibold">Projects</h2>
 			<p>WIP</p>
 		</section>
-		<section class="p-10 flex flex-col gap-4">
-			<h2 class="text-4xl pb-2 font-semibold">FAQ</h2>
-			<div class="collapse collapse-arrow shadow-md">
+		<section class="flex flex-col gap-4 p-10">
+			<h2 class="pb-2 text-4xl font-semibold">FAQ</h2>
+			<div class="shadow-md collapse collapse-arrow">
 				<input type="radio" name="faq" />
-				<div class="collapse-title text-xl font-medium">
+				<div class="text-xl font-medium collapse-title">
 					How can I help?
 				</div>
 				<div class="collapse-content">
@@ -55,9 +28,9 @@ import Layout from "../layouts/Layout.astro";
 					</p>
 				</div>
 			</div>
-			<div class="collapse collapse-arrow shadow-md">
+			<div class="shadow-md collapse collapse-arrow">
 				<input type="radio" name="faq" />
-				<div class="collapse-title text-xl font-medium">
+				<div class="text-xl font-medium collapse-title">
 					Why E-girls?
 				</div>
 				<div class="collapse-content">
